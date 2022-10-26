@@ -10,8 +10,8 @@ import { InventarioApiService } from 'src/app/inventario-api.service';
 export class ShowInventarioComponent implements OnInit {
 
   inventarioLista$!:Observable<any[]>;
-  usuarioLista$!:Observable<any[]>;
-  usuarioLista:any=[];
+  //usuarioLista$!:Observable<any[]>;
+  //usuarioLista:any=[];
 
   // Map to display data associate with foreign keys
   usuarioMap:Map<number, string> = new Map()
@@ -20,6 +20,7 @@ export class ShowInventarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.inventarioLista$ = this.service.getInventarioList();
+    //this.usuarioLista$ = this.service.getUsuarioList();
   }
 
 }

@@ -10,13 +10,15 @@ import { ShowInventarioComponent } from './inventario/show-inventario/show-inven
 import { AddEditInventarioComponent } from './inventario/add-edit-inventario/add-edit-inventario.component';
 import { InventarioApiService } from './inventario-api.service';
 import { HtmlParser } from '@angular/compiler';
+import { ShowUsuariosComponent } from './inventario/show-usuarios/show-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventarioComponent,
     ShowInventarioComponent,
-    AddEditInventarioComponent
+    AddEditInventarioComponent,
+    ShowUsuariosComponent
   ],
   imports: [
     BrowserModule,
