@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { InventarioApiService } from 'src/app/inventario-api.service';
+import { InventarioApiService } from 'src/app/services/inventario-api.service';
 
 @Component({
   selector: 'app-show-usuarios',

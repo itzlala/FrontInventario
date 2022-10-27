@@ -1,6 +1,7 @@
 <!-- <p>show-inventario works!</p> -->
 <table class="table table table striped">
     <thead>
+        <!-- <th>Id</th> -->
         <th>IdInventario</th>
         <th>Folio</th>
         <th>Tipo</th>
@@ -19,6 +20,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let item of inventarioLista$|async">
+            <!-- <td>{{item.Id}}</td> -->
             <td>{{item.IdInventario}}</td>
             <td>{{item.Folio}}</td>
             <td>{{item.Tipo}}</td>

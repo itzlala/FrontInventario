@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { InventarioApiService } from './inventario-api.service';
+import { InventarioApiService } from './services/inventario-api.service';
 
 describe('InventarioApiService', () => {
   let service: InventarioApiService;
