@@ -11,58 +11,76 @@ export class InventarioApiService {
   
   constructor(private http:HttpClient) {
   
-   }
-   // metodos del inventario
+  }
+  // metodos del inventario
 
-   getInventarioList():Observable<any[]> {
-    return this.http.get<any>(this.inventarioAPIUrl + '/Inventario');
-   }
+  getInventarioList():Observable<any[]> {
+  return this.http.get<any>(this.inventarioAPIUrl + '/Inventario');
+  }
 
-   addInventario(data:any){
-    return this.http.post(this.inventarioAPIUrl + '/Inventario', data);
-   }
+  addInventario(data:any){
+  return this.http.post(this.inventarioAPIUrl + '/Inventario', data);
+  }
 
-   updateInventario(id:number|string, data:any) {
-    return this.http.put(this.inventarioAPIUrl + `/Inventario/${id}`, data);
-   }
+  updateInventario(id:number|string, data:any) {
+  return this.http.put(this.inventarioAPIUrl + `/Inventario/${id}`, data);
+  }
 
-   deleteInventario(id:number|string) {
-    return this.http.delete(this.inventarioAPIUrl + `/Inventario/${id}`);
-   }
+  deleteInventario(id:number|string) {
+  return this.http.delete(this.inventarioAPIUrl + `/Inventario/${id}`);
+  }
 
-   // metodos para los usuarios
+  // metodos para los usuarios
 
-   getUsuarioList():Observable<any[]> {
-    return this.http.get<any>(this.inventarioAPIUrl + '/Usuario');
-   }
+  getUsuarioList():Observable<any[]> {
+  return this.http.get<any>(this.inventarioAPIUrl + '/Usuario');
+  }
 
-   addUsuario(data:any){
-    return this.http.post(this.inventarioAPIUrl + '/Usuario', data);
-   }
+  addUsuario(data:any){
+  return this.http.post(this.inventarioAPIUrl + '/Usuario', data);
+  }
 
-   updateUsuario(id:number|string, data:any) {
-    return this.http.put(this.inventarioAPIUrl + `/Usuario/${id}`, data);
-   }
+  updateUsuario(id:number|string, data:any) {
+  return this.http.put(this.inventarioAPIUrl + `/Usuario/${id}`, data);
+  }
 
-   deleteUsuario(id:number|string) {
-    return this.http.delete(this.inventarioAPIUrl + `/Usuario/${id}`);
-   }
+  deleteUsuario(id:number|string) {
+  return this.http.delete(this.inventarioAPIUrl + `/Usuario/${id}`);
+  }
 
-   // Estados
+// metodos para las cuentas
 
-   getEstadoList():Observable<any[]> {
-    return this.http.get<any>(this.inventarioAPIUrl + '/Estado');
-   }
+  getCuentaList():Observable<any[]> {
+  return this.http.get<any>(this.inventarioAPIUrl + '/Cuenta');
+  }
 
-   addEstado(data:any){
-    return this.http.post(this.inventarioAPIUrl + '/Estado', data);
-   }
+  addCuenta(data:any){
+  return this.http.post(this.inventarioAPIUrl + '/Cuenta', data);
+  }
 
-   updateEstado(id:number|string, data:any) {
-    return this.http.put(this.inventarioAPIUrl + `/Estado/${id}`, data);
-   }
+  updateCuenta(id:number|string, data:any) {
+  return this.http.put(this.inventarioAPIUrl + `/Cuenta/${id}`, data);
+  }
 
-   deleteEstado(id:number|string) {
-    return this.http.delete(this.inventarioAPIUrl + `/Estado/${id}`);
-   }
+  deleteCuenta(id:number|string) {
+  return this.http.delete(this.inventarioAPIUrl + `/Cuenta/${id}`);
+  }
+
+  // Estados
+
+  getEstadoList():Observable<any[]> {
+  return this.http.get<any>(this.inventarioAPIUrl + '/Estado');
+  }
+
+  addEstado(data:any){
+  return this.http.post(this.inventarioAPIUrl + '/Estado', data);
+  }
+
+  updateEstado(id:number|string, data:any) {
+  return this.http.put(this.inventarioAPIUrl + `/Estado/${id}`, data);
+  }
+
+  deleteEstado(id:number|string) {
+  return this.http.delete(this.inventarioAPIUrl + `/Estado/${id}`);
+  }
 }

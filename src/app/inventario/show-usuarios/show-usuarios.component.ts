@@ -14,6 +14,7 @@ export class ShowUsuariosComponent implements OnInit {
 
   // Map to display data associate with foreign keys
   usuarioMap:Map<number, string> = new Map()
+  
   constructor(private service: InventarioApiService) { }
 
   ngOnInit(): void {

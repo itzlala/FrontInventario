@@ -32,7 +32,8 @@
                                             placeholder="Ingresa tu contraseña" 
                                             name="contra"
                                             required>
-                                    <span *ngIf="contra.invalid" class="badge badge-primary">El campo 'contraseña' es obligatorio</span>
+                                    <label for="floatingInput">Ingresa tu contraseña</label>
+                                    <span *ngIf="contra.invalid" class="badge-primary">El campo 'contraseña' es obligatorio</span>
                                 </div>
 
                                 <div class="form-check mb-3" style="cursor: pointer;">
