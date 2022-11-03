@@ -2,6 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+export interface Cuenta{
+  usuario: "",
+  password: ""
+}
+
+export interface Response{
+  cuentas: [Cuenta]
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -50,8 +59,8 @@ export class InventarioApiService {
 
 // metodos para las cuentas
 
-  getCuentaList():Observable<any[]> {
-  return this.http.get<any>(this.inventarioAPIUrl + '/Cuenta');
+  getCuentaList() {
+  return this.http.get<Response>(this.inventarioAPIUrl + '/Cuenta');
   }
 
   addCuenta(data:any){

@@ -8,7 +8,8 @@ export class Usuario {
         public contra : String,
         public nombre : String,
         public ape_paterno : String,
-        public ape_materno : String
+        public ape_materno : String,
+        public password: String = ""
     ){ }
 
 }
