@@ -4,14 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 // componentes
 import { ShowInventarioComponent } from './inventario/show-inventario/show-inventario.component';
 import { ShowUsuariosComponent } from './inventario/show-usuarios/show-usuarios.component';
+import { LoginComponent } from './inventario/login/login.component';
+import { PageNotFoundComponentComponent } from './inventario/page-not-found-component/page-not-found-component.component';
 
 const routes: Routes = [
-  { path: 'Inventario', component: ShowInventarioComponent },
-  { path: 'Usuarios', component: ShowUsuariosComponent }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'inventario', component: ShowInventarioComponent },
+  { path: 'usuarios', component: ShowUsuariosComponent },
+  { path: '**', component: PageNotFoundComponentComponent }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const APP_ROUTES = RouterModule.forRoot(routes, { useHash: true });
