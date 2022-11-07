@@ -1,41 +1,47 @@
 <!-- <p>show-inventario works!</p> -->
-<table class="table table table striped">
-    <thead>
-        <!-- <th>Id</th> -->
-        <th>IdInventario</th>
-        <th>Folio</th>
-        <th>Tipo</th>
-        <th>Estatus</th>
-        <th>DescFis</th>
-        <th>DescTec</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        <th>NomProd</th>
-        <th>Nserie</th>
-        <th>Costo</th>
-        <th>Lugar</th>
-        <th>Asignacion</th>
-        <th>Observaciones</th>
-        <th>FechaRegistro</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of inventarioLista$|async">
-            <!-- <td>{{item.Id}}</td> -->
-            <td>{{item.IdInventario}}</td>
-            <td>{{item.Folio}}</td>
-            <td>{{item.Tipo}}</td>
-            <td>{{item.Estatus}}</td>
-            <td>{{item.DescFis}}</td>
-            <td>{{item.DescTec}}</td>
-            <td>{{item.Marca}}</td>
-            <td>{{item.Modelo}}</td>
-            <td>{{item.NomProd}}</td>
-            <td>{{item.Nserie}}</td>
-            <td>{{item.Costo}}</td>
-            <td>{{item.Lugar}}</td>
-            <td>{{item.Asignacion}}</td>
-            <td>{{item.Observaciones}}</td>
-            <td>{{item.FechaRegistro}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="title">
+<h1>Listado Inventario</h1>
+</div>
+<div class="container">
+    <table class="table table table striped">
+        <thead>
+            <!-- <th>Id</th> -->
+            <th>IdInventario</th>
+            <th>Folio</th>
+            <th>Tipo</th>
+            <th>Estatus</th>
+            <th>DescFis</th>
+            <th>DescTec</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>NomProd</th>
+            <th>Nserie</th>
+            <th>Costo</th>
+            <th>Lugar</th>
+            <th>Asignacion</th>
+            <th>Observaciones</th>
+            <th>FechaRegistro</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of inventarioLista$|async">
+                <!-- <td>{{item.Id}}</td> -->
+                <td>{{item.IdInventario}}</td>
+                <td>{{item.Folio}}</td>
+                <td>{{item.Tipo}}</td>
+                <td>{{item.Estatus}}</td>
+                <td>{{item.DescFis}}</td>
+                <td>{{item.DescTec}}</td>
+                <td>{{item.Marca}}</td>
+                <td>{{item.Modelo}}</td>
+                <td>{{item.NomProd}}</td>
+                <td>{{item.Nserie}}</td>
+                <td>{{item.Costo}}</td>
+                <td>{{item.Lugar}}</td>
+                <td>{{item.Asignacion}}</td>
+                <td>{{item.Observaciones}}</td>
+                <td>{{item.FechaRegistro}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    

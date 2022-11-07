@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Notiflix from 'notiflix';
 import { map, Observable } from 'rxjs';
 import { InventarioApiService } from 'src/app/services/inventario-api.service';
 
@@ -18,7 +19,17 @@ export class ShowInventarioComponent implements OnInit {
   constructor(private service: InventarioApiService) { }
 
   ngOnInit(): void {
-    this.inventarioLista$ = this.service.getInventarioList();
+    this.recargaPagina();
+    this.mostrarInventario();
   }
 
+  mostrarInventario()
+  {
+    this.inventarioLista$ = this.service.getInventarioList();
+  }
+  recargaPagina()
+  {
+    Notiflix.Loading.circle();
+    Notiflix.Loading.remove(1000);
+  }
 }

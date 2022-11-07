@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-page-not-found-component',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
+    this.recargaPagina();
   }
+
+  irPage(){
+    this.router.navigate(["/login"])
+  }
+  recargaPagina()
+  {
+    Notiflix.Loading.circle();
+    Notiflix.Loading.remove(500);
+  } 
 
 }
