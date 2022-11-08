@@ -11,6 +11,9 @@ import { HtmlParser } from '@angular/compiler';
 import { ShowUsuariosComponent } from './inventario/show-usuarios/show-usuarios.component';
 import { PageNotFoundComponentComponent } from './inventario/page-not-found-component/page-not-found-component.component';
 import { LoginComponent } from './inventario/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//angular material
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { LoginComponent } from './inventario/login/login.component';
     HttpClientModule,
     FormsModule,
     APP_ROUTES,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   providers: [InventarioApiService],
   bootstrap: [AppComponent]
