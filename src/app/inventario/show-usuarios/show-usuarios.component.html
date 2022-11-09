@@ -1,48 +1,55 @@
 <!-- <p>show-usuarios works!</p> -->
-<table class="table table table striped">
-    <thead>
-        <!-- <th>Id</th> -->
-        <th>IdUsuario</th>
-        <th>DocumentoIdentidad</th>
-        <th>Nombres</th>
-        <th>Telefono</th>
-        <th>Correo</th>
-        <th>Ciudad</th>
-        <th>FechaRegistro</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of usuarioLista$|async">
-            <!-- <td>{{item.Id}}</td> -->
-            <td>{{item.IdUsuario}}</td>
-            <td>{{item.DocumentoIdentidad}}</td>
-            <td>{{item.Nombres}}</td>
-            <td>{{item.Telefono}}</td>
-            <td>{{item.Correo}}</td>
-            <td>{{item.Ciudad}}</td>
-            <td>{{item.FechaRegistro}}</td>
-        </tr>
-    </tbody>
-</table>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+<div class="title">
+    <h1>
+        LISTA DE USUARIOS
+    </h1>
+</div>
+<div class="container">
+    <table class="table table table striped">
+        <thead>
+            <!-- <th>Id</th> -->
+            <th>IdUsuario</th>
+            <th>DocumentoIdentidad</th>
+            <th>Nombres</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Ciudad</th>
+            <th>FechaRegistro</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ELEMENT_DATAUSU|async">
+                <!-- <td>{{item.Id}}</td> -->
+                <td>{{item.IdUsuario}}</td>
+                <td>{{item.DocumentoIdentidad}}</td>
+                <td>{{item.Nombres}}</td>
+                <td>{{item.Telefono}}</td>
+                <td>{{item.Correo}}</td>
+                <td>{{item.Ciudad}}</td>
+                <td>{{item.FechaRegistro}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>

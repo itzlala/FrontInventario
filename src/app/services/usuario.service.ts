@@ -6,48 +6,33 @@ import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Notify } from 'notiflix';
+import { Usuarios } from '../inventario/interfaces/usuarios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  private rutaApi = environment.urlBackEnd;
-
-    isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
-
-    id_usuario : any;
-
-    httpOptions : { headers : HttpHeaders } = {
-      headers : new HttpHeaders({
-        "Content-Type" : "application/json",
-        "Authorization" : `Bearer ${localStorage.getItem("token")}`
-      })
-    };
+  readonly inventarioAPIUrl = "https://localhost:44319/api";
 
   constructor(
-    public http: HttpClient,
-    private router : Router
+    public http: HttpClient
   ) { }
+  // metodos para los usuarios
 
-  public login(usuario : Usuario) : Observable<{
-    token : string,
-    id_usuario : Pick<Usuario, "id_usuario">
-}> {
-    return this.http.post(`${this.rutaApi}/login`,usuario)
-    .pipe(
-        first(),
-        tap( (tokenObject : any ) => {
-            localStorage.setItem("token",tokenObject.data.token);
-            localStorage.setItem("id_usuario",tokenObject.data.id_usuario);
-            this.isUserLoggedIn$.next(true);
-            this.id_usuario = tokenObject.data.id_usuario;
-            this.router.navigate(["app/dashboard"])
-        }),
-        catchError(err => {
-            Notify.info(err.error.message);
-            return throwError(err);
-          })
-    );
-}
+    getUsuarioList():Observable<Usuarios[]> {
+    return this.http.get<Usuarios[]>(this.inventarioAPIUrl + '/Usuario');
+    }
+
+    addUsuario(data:any){
+    return this.http.post(this.inventarioAPIUrl + '/Usuario', data);
+    }
+
+    updateUsuario(id:number|string, data:any) {
+    return this.http.put(this.inventarioAPIUrl + `/Usuario/${id}`, data);
+    }
+
+    deleteUsuario(id:number|string) {
+    return this.http.delete(this.inventarioAPIUrl + `/Usuario/${id}`);
+    }
 }

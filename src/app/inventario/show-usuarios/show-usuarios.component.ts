@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as Notiflix from 'notiflix';
 import { map, Observable } from 'rxjs';
-import { InventarioApiService } from 'src/app/services/inventario-api.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuarios } from '../interfaces/usuarios';
 
 @Component({
   selector: 'app-show-usuarios',
@@ -10,13 +11,14 @@ import { InventarioApiService } from 'src/app/services/inventario-api.service';
 })
 export class ShowUsuariosComponent implements OnInit {
 
+  ELEMENT_DATAUSU!: Observable<Usuarios[]>;
   usuarioLista$!:Observable<any[]>;
   usuarioLista:any=[];
 
   // Map to display data associate with foreign keys
   usuarioMap:Map<number, string> = new Map()
   
-  constructor(private service: InventarioApiService) { }
+  constructor(private service: UsuarioService) { }
 
   ngOnInit(): void {
     this.recargaPagina();
@@ -25,7 +27,8 @@ export class ShowUsuariosComponent implements OnInit {
 
   mostrarUsuarios()
   {
-    this.usuarioLista$ = this.service.getUsuarioList();
+    this.ELEMENT_DATAUSU = this.service.getUsuarioList()
+    //this.usuarioLista$ = this.service.getUsuarioList();
   }
 
   recargaPagina()

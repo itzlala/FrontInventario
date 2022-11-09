@@ -14,6 +14,7 @@ import { LoginComponent } from './inventario/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //angular material
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     APP_ROUTES,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [InventarioApiService],
   bootstrap: [AppComponent]

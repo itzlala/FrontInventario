@@ -11,5 +11,5 @@ export class Usuario {
         public ape_materno : String,
         public password: String = ""
     ){ }
-
+ 
 }

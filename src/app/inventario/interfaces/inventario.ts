@@ -1,5 +1,6 @@
+
 export interface Inventario {
-    id?: number,
+    Id?: number,
     IdInventario: number,
     Folio: string,
     Tipo: string,
@@ -14,5 +15,5 @@ export interface Inventario {
     Lugar: string,
     Asignacion: string,
     Observaciones: string,
-    FechaRegistro: string
+    FechaRegistro: Date
 }

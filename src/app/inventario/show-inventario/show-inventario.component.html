@@ -1,12 +1,72 @@
 <!-- <p>show-inventario works!</p> -->
 <div class="title">
-<h1>Listado Inventario</h1>
+<h1>LISTADO DE INVENTARIO</h1>
 </div>
 <div class="container">
-    <table class="table table table striped">
-        <thead>
+    <table  mat-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container matColumnDef="IdInventario">
+            <th mat-header-cell *matHeaderCellDef> IdInventario </th>
+            <td mat-cell *matCellDef="let element"> {{element.IdInventario}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Folio">
+            <th mat-header-cell *matHeaderCellDef> Folio </th>
+            <td mat-cell *matCellDef="let element"> {{element.Folio}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Estatus">
+            <th mat-header-cell *matHeaderCellDef> Estatus </th>
+            <td mat-cell *matCellDef="let element"> {{element.Estatus}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        </ng-container>
             <!-- <th>Id</th> -->
-            <th>IdInventario</th>
+            <!-- <th>IdInventario</th>
             <th>Folio</th>
             <th>Tipo</th>
             <th>Estatus</th>
@@ -20,32 +80,14 @@
             <th>Lugar</th>
             <th>Asignacion</th>
             <th>Observaciones</th>
-            <th>FechaRegistro</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of inventarioLista$|async">
-                <!-- <td>{{item.Id}}</td> -->
-                <td>{{item.IdInventario}}</td>
-                <td>{{item.Folio}}</td>
-                <td>{{item.Tipo}}</td>
-                <td>{{item.Estatus}}</td>
-                <td>{{item.DescFis}}</td>
-                <td>{{item.DescTec}}</td>
-                <td>{{item.Marca}}</td>
-                <td>{{item.Modelo}}</td>
-                <td>{{item.NomProd}}</td>
-                <td>{{item.Nserie}}</td>
-                <td>{{item.Costo}}</td>
-                <td>{{item.Lugar}}</td>
-                <td>{{item.Asignacion}}</td>
-                <td>{{item.Observaciones}}</td>
-                <td>{{item.FechaRegistro}}</td>
-            </tr>
-        </tbody>
+            <th>FechaRegistro</th> -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                 showFirstLastButtons 
-                 aria-label="Select page of periodic elements">
-  </mat-paginator>
+                showFirstLastButtons 
+                aria-label="Select page of periodic elements">
+    </mat-paginator>
 </div>
     

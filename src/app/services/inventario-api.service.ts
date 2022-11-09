@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Inventario } from '../inventario/interfaces/inventario';
 
 export interface Cuenta{
   usuario: "",
@@ -23,8 +24,8 @@ export class InventarioApiService {
   }
   // metodos del inventario
 
-  getInventarioList():Observable<any[]> {
-  return this.http.get<any>(this.inventarioAPIUrl + '/Inventario');
+  getInventarioList():Observable<Inventario[]> {
+  return this.http.get<Inventario[]>(this.inventarioAPIUrl + '/Inventario');
   }
 
   addInventario(data:any){
