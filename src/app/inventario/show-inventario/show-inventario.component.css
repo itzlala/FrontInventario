@@ -11,3 +11,13 @@ table{
     color: white;
 }
 
+.container {
+    margin: 0 20%
+}
+
+td, th {
+    height: 50%;
+    width: 10%;
+    text-align: center;
+
+}

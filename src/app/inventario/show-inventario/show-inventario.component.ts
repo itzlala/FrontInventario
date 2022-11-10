@@ -21,7 +21,7 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
   inventarioLista!:Observable<any[]>;
   inventarioLista1: any=[];
   
-  dataSource = new MatTableDataSource<Inventario>([]); 
+  dataSource = new MatTableDataSource<Inventario>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   // Map to display data associate with foreign keys

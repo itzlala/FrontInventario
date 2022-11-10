@@ -3,7 +3,7 @@
 <h1>LISTADO DE INVENTARIO</h1>
 </div>
 <div class="container">
-    <table  mat-table [dataSource]="dataSource">
+    <table  mat-table [dataSource]="dataSource" class="mat-elevation-z5">
         <!-- Position Column -->
         <ng-container matColumnDef="IdInventario">
             <th mat-header-cell *matHeaderCellDef> IdInventario </th>
@@ -21,66 +21,50 @@
             <th mat-header-cell *matHeaderCellDef> Estatus </th>
             <td mat-cell *matCellDef="let element"> {{element.Estatus}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="DescFis">
+            <th mat-header-cell *matHeaderCellDef> DescFis </th>
+            <td mat-cell *matCellDef="let element"> {{element.DescFis}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="DescTec">
+            <th mat-header-cell *matHeaderCellDef> DescTec </th>
+            <td mat-cell *matCellDef="let element"> {{element.DescTec}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Marca">
+            <th mat-header-cell *matHeaderCellDef> Marca </th>
+            <td mat-cell *matCellDef="let element"> {{element.Marca}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Modelo">
+            <th mat-header-cell *matHeaderCellDef> Modelo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Modelo}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="NomProd">
+            <th mat-header-cell *matHeaderCellDef> NomProd </th>
+            <td mat-cell *matCellDef="let element"> {{element.NomProd}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Nserie">
+            <th mat-header-cell *matHeaderCellDef> Nserie </th>
+            <td mat-cell *matCellDef="let element"> {{element.Nserie}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Costo">
+            <th mat-header-cell *matHeaderCellDef> Costo </th>
+            <td mat-cell *matCellDef="let element"> {{element.Costo}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Lugar">
+            <th mat-header-cell *matHeaderCellDef> Lugar </th>
+            <td mat-cell *matCellDef="let element"> {{element.Lugar}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Asignacion">
+            <th mat-header-cell *matHeaderCellDef> Asignacion </th>
+            <td mat-cell *matCellDef="let element"> {{element.Asignacion}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="Observaciones">
+            <th mat-header-cell *matHeaderCellDef> Observaciones </th>
+            <td mat-cell *matCellDef="let element"> {{element.Observaciones}} </td>
         </ng-container>
-        <ng-container matColumnDef="Tipo">
-            <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+        <ng-container matColumnDef="FechaRegistro">
+            <th mat-header-cell *matHeaderCellDef> FechaRegistro </th>
+            <td mat-cell *matCellDef="let element"> {{element.FechaRegistro}} </td>
         </ng-container>
-            <!-- <th>Id</th> -->
-            <!-- <th>IdInventario</th>
-            <th>Folio</th>
-            <th>Tipo</th>
-            <th>Estatus</th>
-            <th>DescFis</th>
-            <th>DescTec</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>NomProd</th>
-            <th>Nserie</th>
-            <th>Costo</th>
-            <th>Lugar</th>
-            <th>Asignacion</th>
-            <th>Observaciones</th>
-            <th>FechaRegistro</th> -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
