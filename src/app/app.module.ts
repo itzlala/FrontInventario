@@ -12,9 +12,16 @@ import { ShowUsuariosComponent } from './inventario/show-usuarios/show-usuarios.
 import { PageNotFoundComponentComponent } from './inventario/page-not-found-component/page-not-found-component.component';
 import { LoginComponent } from './inventario/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PanelOpcionesComponent } from './inventario/panel-opciones/panel-opciones.component';
 //angular material
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +30,8 @@ import { MatTableModule } from '@angular/material/table';
     AddEditInventarioComponent,
     ShowUsuariosComponent,
     PageNotFoundComponentComponent,
-    LoginComponent
+    LoginComponent,
+    PanelOpcionesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,11 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [InventarioApiService],
   bootstrap: [AppComponent]

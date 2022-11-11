@@ -5,6 +5,8 @@ import { InventarioApiService } from 'src/app/services/inventario-api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inventario } from '../interfaces/inventario';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { ThisReceiver } from '@angular/compiler';
 
 
 
@@ -23,6 +25,7 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
   
   dataSource = new MatTableDataSource<Inventario>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   // Map to display data associate with foreign keys
   usuarioMap:Map<number, string> = new Map()
@@ -36,6 +39,8 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator._intl.itemsPerPageLabel = 'Elementos por pagina';
   }
 
   mostrarInventario()

@@ -12,12 +12,12 @@ table{
 }
 
 .container {
-    margin: 0 20%
+    margin: auto;
 }
 
 td, th {
-    height: 50%;
-    width: 10%;
+    height: auto;
+    width: auto;
     text-align: center;
 
 }
