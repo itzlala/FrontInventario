@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
           {
             Notiflix.Report.success('Logueo exitoso', 'Presione continuar para acceder al inventario', 'Continuar');
             Notify.success('😃 Ha logueado exitosamente 🐇')
-            this.router.navigate(["inventario"])
+            this.router.navigate(["home"])
           }
           else
           {

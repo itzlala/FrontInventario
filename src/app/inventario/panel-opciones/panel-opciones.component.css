@@ -1,0 +1,24 @@
+.imagen1{
+    background-image: url('../../../assets/images/inventarioIMG.jpg');
+    background-size: cover;
+    background-position:center;
+}
+
+.imagen2{
+    background-image: url('../../../assets/images/usuariosIMG.jpg');
+    background-size: cover;
+    background-position:center;
+}
+
+.tamanio{
+    height: 80%!important;
+}
+
+.title{
+    padding: 30px;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    text-align: center;
+    color: white;
+}
+
