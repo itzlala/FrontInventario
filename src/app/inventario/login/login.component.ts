@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     Notiflix.Loading.remove(1000);
   }
   
-  login()
+  Accesar()
   {
     //alert("entro");
     //this.usuario_service.login(this.usuario).subscribe();

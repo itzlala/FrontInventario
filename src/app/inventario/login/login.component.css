@@ -8,6 +8,9 @@
     background-position: center;
   }
   
+  input.ng-invalid.ng-touched{
+    border:solid 2px tomato;
+  }
   .login-heading {
     font-weight: 300;
   }

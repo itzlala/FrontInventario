@@ -7,6 +7,7 @@ import { Inventario } from '../interfaces/inventario';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ThisReceiver } from '@angular/compiler';
+import { inventario } from 'src/app/models/inventario.inventario';
 
 
 
@@ -22,6 +23,7 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
   ELEMENT_DATAINV!: Observable<Inventario[]>;
   inventarioLista!:Observable<any[]>;
   inventarioLista1: any=[];
+  public inventario = new inventario(0,0,"","","","","","","","","","","","","",new Date);
   
   dataSource = new MatTableDataSource<Inventario>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -48,9 +50,12 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
     //this.inventarioLista$ = this.service.getInventarioList();
     this.service.getInventarioList().subscribe(result => {
       this.dataSource.data = result
-    });
-    
-    
+    }); 
+  }
+
+  insertarDatos()
+  {
+
   }
   recargaPagina()
   {
