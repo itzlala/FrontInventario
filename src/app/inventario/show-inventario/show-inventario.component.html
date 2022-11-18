@@ -1,6 +1,13 @@
 <!-- <p>show-inventario works!</p> -->
 <div class="title">
-<h1>LISTADO DE INVENTARIO</h1>
+    <h1>
+        <div class="" align="left">
+            <button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="redirigeAlHome()">
+            <mat-icon>home</mat-icon>
+            </button>
+        </div>
+        LISTADO DE INVENTARIO
+    </h1>
 </div>
 <br>
 <div class="container">
@@ -74,47 +81,9 @@
                 aria-label="Select page of periodic elements">
     </mat-paginator>
     <br>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Agregar Nuevo Registro
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="">Insertar Nuevo Registro</h1>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-                </div>
-                <div class="modal-body">
-                    <form novalidate (ngSubmit)="insertarDatos()" #form="ngForm">
-                        <label for="floatingInput" style="font-size:large"> Folio </label>                           
-                        <div class="form-floating mb-3">
-                            <input matInput [(ngModel)]="inventario.Folio" #name="ngModel" type="text" class="form-control"  max="8" required>
-                        </div>
-                        <label for="floatingInput" style="font-size:large"> Tipo </label>                           
-                        <div class="form-floating mb-3">
-                            <input matInput [(ngModel)]="inventario.Tipo" #name="ngModel" type="text" class="form-control"  max="8" required>
-                        </div>
-                        <label for="floatingInput" style="font-size:large"> Estatus </label>                           
-                        <div class="form-floating mb-3">
-                            <input matInput [(ngModel)]="inventario.Estatus" #name="ngModel" type="text" class="form-control"  max="8" required>
-                        </div>
-                        <label for="floatingInput" style="font-size:large"> DescFis </label>                           
-                        <div class="form-floating mb-3">
-                            <input matInput [(ngModel)]="inventario.DescFis" #name="ngModel" type="text" class="form-control"  max="8" required>
-                        </div>
-                        <label for="floatingInput" style="font-size:large"> DescTec </label>                           
-                        <div class="form-floating mb-3">
-                            <input matInput [(ngModel)]="inventario.DescTec" #name="ngModel" type="text" class="form-control"  max="8" required>
-                        </div>
-                    </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Enviar Datos</button>
-                </div>
-            </div>
-        </div>
+    <div align="center">
+        <button mat-raised-button class="btn botonMargen" (click)="openDialogI()">Agregar</button>
+        <button mat-raised-button class="btn botonMargen"> Modificar </button>
+        <button mat-raised-button class="btn botonMargen"> Eliminar </button>
     </div>
 </div>
-    

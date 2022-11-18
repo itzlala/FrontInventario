@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-inventario.component.css']
 })
 export class AddEditInventarioComponent implements OnInit {
+inventario: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  insertarDatos()
+  {
+
+  }
 }

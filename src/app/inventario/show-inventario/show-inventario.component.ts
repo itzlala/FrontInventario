@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, inject, Inject } from '@angular/core';
 import * as Notiflix from 'notiflix';
 import { map, Observable } from 'rxjs';
 import { InventarioApiService } from 'src/app/services/inventario-api.service';
@@ -8,6 +8,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ThisReceiver } from '@angular/compiler';
 import { inventario } from 'src/app/models/inventario.inventario';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { AddEditInventarioComponent } from '../add-edit-inventario/add-edit-inventario.component';
+import { Router } from '@angular/router';
 
 
 
@@ -18,6 +22,8 @@ import { inventario } from 'src/app/models/inventario.inventario';
   styleUrls: ['./show-inventario.component.css']
 })
 export class ShowInventarioComponent implements OnInit, AfterViewInit {
+  animal: any;
+  name: any;
   
   displayedColumns: string[] = ['IdInventario','Folio','Tipo','Estatus','DescFis','DescTec','Marca','Modelo','NomProd','Nserie','Costo','Lugar','Asignacion','Observaciones','FechaRegistro'];
   ELEMENT_DATAINV!: Observable<Inventario[]>;
@@ -32,7 +38,24 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
   // Map to display data associate with foreign keys
   usuarioMap:Map<number, string> = new Map()
 
-  constructor(private service: InventarioApiService) { }
+
+  constructor(
+    private router : Router,
+    private service: InventarioApiService,
+    public dialog: MatDialog
+    ) { }
+
+    openDialogI(): void {
+      const dialogRef = this.dialog.open(AddEditInventarioComponent, {
+        width: '250px',
+        data: {name: this.name, animal: this.animal},
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.animal = result;
+      });
+    }
 
   ngOnInit(): void {
     this.recargaPagina();
@@ -53,6 +76,11 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
     }); 
   }
 
+  redirigeAlHome()
+  {
+    this.router.navigate(["home"])
+  }
+
   insertarDatos()
   {
 
@@ -62,5 +90,6 @@ export class ShowInventarioComponent implements OnInit, AfterViewInit {
     Notiflix.Loading.circle();
     Notiflix.Loading.remove(1000);
   }
+
 
 }

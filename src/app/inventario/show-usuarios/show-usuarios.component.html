@@ -1,6 +1,11 @@
 <!-- <p>show-usuarios works!</p> -->
 <div class="title">
     <h1>
+        <div class="" align="left">
+            <button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="redirigeAlHome()">
+            <mat-icon>home</mat-icon>
+            </button>
+        </div>
         LISTA DE USUARIOS
     </h1>
 </div>
@@ -44,27 +49,9 @@
                 aria-label="Select page of periodic elements">
     </mat-paginator>
     <br>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Agregar Usuario Nuevo
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
+    <div align="center">
+        <button mat-raised-button class="btn botonMargen" (click)="openDialogU()">Agregar</button>
+        <button mat-raised-button class="btn botonMargen"> Modificar </button>
+        <button mat-raised-button class="btn botonMargen"> Eliminar </button>
     </div>
 </div>

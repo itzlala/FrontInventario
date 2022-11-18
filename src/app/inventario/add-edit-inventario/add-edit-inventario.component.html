@@ -1,1 +1,22 @@
-<p>add-edit-inventario works!</p>
+<form novalidate (ngSubmit)="insertarDatos()" #form="ngForm">
+    <label for="floatingInput" style="font-size:large"> Folio </label>                           
+    <div class="form-floating mb-3">
+        <input matInput [(ngModel)]="inventario.Folio" #name="ngModel" type="text" class="form-control"  max="8" required>
+    </div>
+    <label for="floatingInput" style="font-size:large"> Tipo </label>                           
+    <div class="form-floating mb-3">
+        <input matInput [(ngModel)]="inventario.Tipo" #name="ngModel" type="text" class="form-control"  max="8" required>
+    </div>
+    <label for="floatingInput" style="font-size:large"> Estatus </label>                           
+    <div class="form-floating mb-3">
+        <input matInput [(ngModel)]="inventario.Estatus" #name="ngModel" type="text" class="form-control"  max="8" required>
+    </div>
+    <label for="floatingInput" style="font-size:large"> DescFis </label>                           
+    <div class="form-floating mb-3">
+        <input matInput [(ngModel)]="inventario.DescFis" #name="ngModel" type="text" class="form-control"  max="8" required>
+    </div>
+    <label for="floatingInput" style="font-size:large"> DescTec </label>                           
+    <div class="form-floating mb-3">
+        <input matInput [(ngModel)]="inventario.DescTec" #name="ngModel" type="text" class="form-control"  max="8" required>
+    </div>
+</form>

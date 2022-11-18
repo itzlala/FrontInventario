@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import * as Notiflix from 'notiflix';
 import { map, Observable } from 'rxjs';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -23,7 +24,10 @@ export class ShowUsuariosComponent implements OnInit {
   // Map to display data associate with foreign keys
   usuarioMap:Map<number, string> = new Map()
   
-  constructor(private service: UsuarioService) { }
+  constructor(
+    private service: UsuarioService,
+    private router : Router
+    ) { }
 
   ngOnInit(): void {
     this.recargaPagina();
@@ -42,6 +46,15 @@ export class ShowUsuariosComponent implements OnInit {
     this.service.getUsuarioList().subscribe(result => {
       this.dataSource.data = result
     });
+  }
+  redirigeAlHome()
+  {
+    this.router.navigate(["home"])
+  }
+
+  openDialogU()
+  {
+    
   }
 
   recargaPagina()

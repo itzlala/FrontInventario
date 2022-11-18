@@ -20,8 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule} from '@angular/material/dialog';
-import { MatButton } from '@angular/material/button';
-
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -45,7 +44,8 @@ import { MatButton } from '@angular/material/button';
     MatSortModule,
     MatButtonModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [InventarioApiService],
   bootstrap: [AppComponent]
